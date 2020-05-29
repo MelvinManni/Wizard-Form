@@ -115,7 +115,7 @@ input[type='number'] {
 @media all and (max-width: 640px){
 	.mobile-row{
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		flex-direction: row-reverse;
 		align-items: center;
 	}
