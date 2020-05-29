@@ -1,0 +1,122 @@
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+.card-body,
+.card {
+  min-width: 450px;
+  max-width: 640px;
+}
+
+@media all and (max-width: 450px) {
+  .card-body,
+  .card {
+	max-width: 450px;
+	min-width: 280px;
+  }
+
+  .check-label{
+	  padding: 5px;
+	  font-size: 11px;
+
+  }
+}
+
+label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+}
+
+.check-label {
+  padding: 10px;
+  box-shadow: 2px 1px 2px 1px rgb(201, 201, 201);
+  max-width: 130px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+}
+input[name='businessType'] {
+  display: none;
+}
+
+input[name='businessType']:checked ~ label {
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.myInputStyle {
+  padding-top: 20px;
+}
+
+.myInputStyle-label {
+  position: absolute;
+  font-size: 13px;
+  font-weight: 300;
+  bottom: 0px;
+  left: 10px;
+  transition: 0.4s ease all;
+}
+
+.myInputStyle:focus ~ label,
+.myInputStyle:valid ~ label {
+  bottom: 12px;
+  font-size: 11px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.range-holder {
+  height: 55px;
+  border: 3px solid #8e97ab;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 6px;
+  padding-top: 10px;
+}
+
+.innerValue {
+  justify-self: center;
+  align-self: center;
+}
+
+#range-inValue,
+#loan-inValue {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.innerValue .subtext {
+  font-size: 14px;
+}
+
+.range-holder input {
+  position: relative;
+  bottom: -8px;
+}
+
+.grey-out {
+  color: #8e97ab;
+}
+
+
+@media all and (max-width: 640px){
+	.mobile-row{
+		display: flex;
+		justify-content: space-evenly;
+		flex-direction: row-reverse;
+		align-items: center;
+	}
+}

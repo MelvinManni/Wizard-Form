@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/smartwizard@5.0.0/dist/css/smart_wizard_all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="./jquery-smartwizard-master/src/css/smart_wizard_dots.css"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container col-md-8 mx-auto p-0 mt-5 mb-5">
+      <div id="smartwizard" class="mobile-row">
+        <ul class="nav">
+          <li>
+            <a class="nav-link" href="#step-1">
+              Step 1
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#step-2">
+              Step 2
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#step-3">
+              Step 3
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#step-4">
+              Step 4
+            </a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div id="step-1" class="tab-pane" role="tabpanel">
+            <div class="card mx-auto">
+              <div class="card-body">
+                <form id="step1-form">
+                  <div>
+                    <div
+                      class="check-inputs d-flex flex-row justify-content-between"
+                    >
+                      <div class="form-group">
+                        <input
+                          type="radio"
+                          name="businessType"
+                          id="employed"
+                          checked
+                        />
+                        <label for="employed" class="check-label">
+                          Employed
+                        </label>
+                      </div>
+
+                      <div class="form-group">
+                        <input type="radio" name="businessType" id="owner" />
+                        <label for="owner" class="check-label">
+                          Buisness Owner
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group position-relative">
+                    <input
+                      type="number"
+                      min="22"
+                      class="form-control myInputStyle"
+                      id="age"
+                      required
+                    />
+                    <label for="age" class="myInputStyle-label"
+                      >How old are you ?</label
+                    >
+                  </div>
+
+                  <div class="form-group">
+                    <select
+                      onchange="toggleLGA(this);"
+                      name="state"
+                      id="state"
+                      class="form-control danger"
+                    >
+                      <option value="" selected="selected">Select State</option>
+                      <option value="Abia">Abia</option>
+                      <option value="Adamawa">Adamawa</option>
+                      <option value="AkwaIbom">AkwaIbom</option>
+                      <option value="Anambra">Anambra</option>
+                      <option value="Bauchi">Bauchi</option>
+                      <option value="Bayelsa">Bayelsa</option>
+                      <option value="Benue">Benue</option>
+                      <option value="Borno">Borno</option>
+                      <option value="Cross River">Cross River</option>
+                      <option value="Delta">Delta</option>
+                      <option value="Ebonyi">Ebonyi</option>
+                      <option value="Edo">Edo</option>
+                      <option value="Ekiti">Ekiti</option>
+                      <option value="Enugu">Enugu</option>
+                      <option value="FCT">FCT</option>
+                      <option value="Gombe">Gombe</option>
+                      <option value="Imo">Imo</option>
+                      <option value="Jigawa">Jigawa</option>
+                      <option value="Kaduna">Kaduna</option>
+                      <option value="Kano">Kano</option>
+                      <option value="Katsina">Katsina</option>
+                      <option value="Kebbi">Kebbi</option>
+                      <option value="Kogi">Kogi</option>
+                      <option value="Kwara">Kwara</option>
+                      <option value="Lagos">Lagos</option>
+                      <option value="Nasarawa">Nasarawa</option>
+                      <option value="Niger">Niger</option>
+                      <option value="Ogun">Ogun</option>
+                      <option value="Ondo">Ondo</option>
+                      <option value="Osun">Osun</option>
+                      <option value="Oyo">Oyo</option>
+                      <option value="Plateau">Plateau</option>
+                      <option value="Rivers">Rivers</option>
+                      <option value="Sokoto">Sokoto</option>
+                      <option value="Taraba">Taraba</option>
+                      <option value="Yobe">Yobe</option>
+                      <option value="Zamfara">Zamafara</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <select
+                      disabled
+                      name="lga"
+                      id="lga"
+                      class="form-control select-lga"
+                      required
+                    >
+                    </select>
+                  </div>
+
+                  <div class="form-group position-relative">
+                    <input
+                      type="number"
+                      min="22"
+                      class="form-control myInputStyle"
+                      id="setAge"
+                      required
+                    />
+                    <label for="setAge" class="myInputStyle-label"
+                      >Estimate Monthly income (eg 60000)</label
+                    >
+                  </div>
+                </form>
+              </div>
+              <button form="step1-form" type="submit" class="btn btn-primary">
+                Submit
+              </button>
+            </div>
+          </div>
+          <div id="step-2" class="tab-pane" role="tabpanel">
+            <div class="card mx-auto" style="width: 18rem;">
+              <div class="card-body">
+                <form id="step2-form">
+                  <div class="form-group">
+                    <label for="loan">Loan Amount</label>
+                    <div class="range-holder">
+                      <div class="grey-out innerValue">
+                        <span id="loan-inValue">
+                          200000
+                        </span>
+                      </div>
+                      <input
+                        type="range"
+                        class="form-control-range"
+                        min="200000"
+                        max="1500000"
+                        value="200000"
+                        id="loan"
+                      />
+                    </div>
+                    <div
+                      class="rangeData d-flex flex-row justify-content-between mt-1 grey-out"
+                    >
+                      <small>
+                        200 000
+                      </small>
+
+                      <small>
+                        1 500 000
+                      </small>
+                    </div>
+                    <hr />
+                  </div>
+                  <div class="form-group mt-3">
+                    <label for="tenure" class="mt-2">Tenure</label>
+                    <div class="range-holder">
+                      <div class="grey-out innerValue">
+                        <span id="range-inValue">
+                          12
+                        </span>
+                        <span class="sub-text">
+                          weeks
+                        </span>
+                      </div>
+                      <input
+                        min="12"
+                        max="24"
+                        value="12"
+                        type="range"
+                        class="form-control-range"
+                        id="tenure"
+                      />
+                    </div>
+
+                    <div
+                      class="rangeData d-flex flex-row justify-content-between mt-1 grey-out"
+                    >
+                      <small>
+                        12 Weeks
+                      </small>
+
+                      <small>
+                        24 Weeks
+                      </small>
+                    </div>
+                    <hr />
+                  </div>
+
+                  <div class="data-view">
+                    <p>Loan amount ₦<span id="loan-view">200000</span></p>
+                    <p>Loan tenure <span id="tenure-view">24</span> weeks</p>
+                  </div>
+
+                  <div class="week-pay">
+                    <p>Weekly repayment ₦ <span id="weekPay">16667</span></p>
+                  </div>
+                </form>
+              </div>
+              <button type="submit" form="step2-form" class="btn btn-primary">
+                Submit
+              </button>
+            </div>
+          </div>
+          <div id="step-3" class="tab-pane" role="tabpanel">
+            <div class="card mx-auto" style="width: 18rem;">
+              <div class="card-body">
+                <form id="step3-form">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                    <small class=""> Hi </small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="exampleInputPassword1"
+                    />
+                  </div>
+                  <div class="form-group form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="exampleCheck1"
+                    />
+                    <label class="form-check-label" for="exampleCheck1"
+                      >Check me out</label
+                    >
+                  </div>
+                </form>
+              </div>
+              <button class="btn btn-primary" form="step3-form">
+                Submit
+              </button>
+            </div>
+          </div>
+          <div id="step-4" class="tab-pane" role="tabpanel">
+            <div class="card mx-auto" style="width: 18rem;">
+              <div class="card-body">
+                <form id="step4-form">
+                  <form>
+                    <div class="form-row">
+                      <div class="col">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="First name"
+                        />
+                      </div>
+                      <div class="col">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Last name"
+                        />
+                      </div>
+                    </div>
+                  </form>
+                  <div class="form-group position-relative mt-3">
+                    <input
+                      type="email"
+                      class="form-control myInputStyle"
+                      id="text"
+                      required
+                    />
+                    <label for="pass" class="myInputStyle-label"
+                      >Email</label
+                    >
+                  </div>
+                  <div class="form-group position-relative mt-3">
+                    <input
+                      type="password"
+                      class="form-control myInputStyle"
+                      id="pass"
+                      required
+                    />
+                    <label for="pass" class="myInputStyle-label"
+                      >Password</label
+                    >
+                  </div>
+                  <div class="form-group form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="exampleCheck1"
+                    />
+                    <label class="form-check-label" for="exampleCheck1"
+                      >Check me out</label
+                    >
+                  </div>
+                </form>
+              </div>
+
+              <button
+                class="btn btn-primary"
+                form="step4-form"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
+                Submit
+              </button>
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      Onboarding Successful
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                        id="redirect"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==<SCRIPT></SCRIPT> -->
+
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+    ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script
+      src="https://unpkg.com/smartwizard@5.0.0/dist/js/jquery.smartWizard.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="./stateLga.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
