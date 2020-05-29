@@ -11,8 +11,12 @@
 @media all and (max-width: 450px) {
   .card-body,
   .card {
-	max-width: 450px;
+	max-width: 320px;
 	min-width: 220px;
+  }
+
+  .card {
+	  margin-right: 10px;
   }
 
   .check-label{
