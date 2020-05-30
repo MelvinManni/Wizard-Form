@@ -116,11 +116,46 @@ input[type='number'] {
 
 .range-holder input {
   position: relative;
-  bottom: -8px;
+  bottom: -3px;
 }
 
 .grey-out {
   color: #8e97ab;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  height: 4px;
+  border-radius: 0 0 6px 6px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  outline: none;
+  background: #8e97ab;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #007bff;
+  cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #007bff;
+  cursor: pointer;
 }
 
 @media all and (max-width: 640px) {
@@ -134,9 +169,9 @@ input[type='number'] {
 
   .sw.sw-justified > .nav .nav-link,
   .sw.sw-justified > .nav {
-	display: flex !important;
-	flex-direction: row;
-	justify-content: center;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
   }
   .nav li a {
     font-size: 12px;
