@@ -25,8 +25,6 @@
 
   .check-label {
     padding: 0px;
-    font-size: 25px;
-    overflow: scroll;
   }
 }
 
@@ -46,7 +44,7 @@ input[type='number'] {
 .check-label {
   padding: 10px;
   box-shadow: 2px 1px 2px 1px rgb(201, 201, 201);
-  max-width: 130px;
+  min-width: 130px;
   height: 60px;
   border-radius: 6px;
   text-align: center;
