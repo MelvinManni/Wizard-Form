@@ -56,7 +56,7 @@
 
 @media screen and (max-width: 640px) {
   .sw > .nav {
-    flex-direction: column !important;
+    flex-direction: row !important;
     flex: 1 auto;
   }
 }
