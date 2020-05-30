@@ -11,18 +11,22 @@
 @media all and (max-width: 450px) {
   .card-body,
   .card {
-	max-width: 320px;
-	min-width: 220px;
+    max-width: 320px;
+    min-width: 220px;
+  }
+
+  .card-body {
+    padding: 20px 10px;
   }
 
   .card {
-	  margin-right: 10px;
+    margin-right: 50px;
   }
 
-  .check-label{
-	  padding: 5px;
-	  font-size: 11px;
-
+  .check-label {
+    padding: 0px;
+    font-size: 25px;
+    overflow: scroll;
   }
 }
 
@@ -36,10 +40,14 @@ label {
   padding: 10px;
   box-shadow: 2px 1px 2px 1px rgb(201, 201, 201);
   max-width: 130px;
+  height: 60px;
   border-radius: 6px;
   text-align: center;
   font-weight: 600;
   font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 input[name='businessType'] {
   display: none;
@@ -115,12 +123,22 @@ input[type='number'] {
   color: #8e97ab;
 }
 
-
-@media all and (max-width: 640px){
-	.mobile-row{
+@media all and (max-width: 640px) {
+  /* .mobile-row{
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-start;
 		flex-direction: row-reverse;
 		align-items: center;
 	}
+ */
+
+  .sw.sw-justified > .nav .nav-link,
+  .sw.sw-justified > .nav {
+	display: flex !important;
+	flex-direction: row;
+	justify-content: center;
+  }
+  .nav li a {
+    font-size: 12px;
+  }
 }
