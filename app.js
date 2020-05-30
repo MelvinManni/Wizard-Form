@@ -64,4 +64,18 @@ $(document).ready(function () {
     let weekPay = $('#loan').val() / $('#tenure').val();
     $('#weekPay').text(parseInt(weekPay));
   });
+
+
+    $('div .myInputStyle').change(function (e) { 
+      e.preventDefault();
+      console.log('Hello');
+      
+
+      if(e.target.value !== ''){
+          $(e.target).next('.myInputStyle-label').addClass('test');
+      } else{
+          $(e.target).next('.myInputStyle-label').removeClass('test');
+      }
+      
+  });
 });

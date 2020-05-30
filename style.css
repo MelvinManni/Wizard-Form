@@ -36,6 +36,13 @@ label {
   color: #666;
 }
 
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='number'] {
+  min-height: 40px !important;
+}
+
 .check-label {
   padding: 10px;
   box-shadow: 2px 1px 2px 1px rgb(201, 201, 201);
@@ -66,14 +73,19 @@ input[name='businessType']:checked ~ label {
   position: absolute;
   font-size: 13px;
   font-weight: 300;
-  bottom: 0px;
+  bottom: 2px;
   left: 10px;
   transition: 0.4s ease all;
 }
 
 .myInputStyle:focus ~ label,
 .myInputStyle:valid ~ label {
-  bottom: 12px;
+  bottom: 15px;
+  font-size: 11px;
+}
+
+.test {
+  bottom: 15px;
   font-size: 11px;
 }
 
